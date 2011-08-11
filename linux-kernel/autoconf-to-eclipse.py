@@ -15,12 +15,12 @@ f = open(sys.argv[1])
 
 for line in f:
     line = line[:-1].replace("\"", "&quot;")
-    words = line.split()
+    words = line.split(None, 3)
     if len(words) == 0:
         continue
     if words[0] == "#define":
         if len(words) > 2:
-            stuff_to_add.append("<listOptionValue builtIn=\"false\" value=\"%s=%s\"/> <!--GENERATED-->" % (words[1], line[line.find(words[2]):]))
+            stuff_to_add.append("<listOptionValue builtIn=\"false\" value=\"%s=%s\"/> <!--GENERATED-->" % (words[1], words[2]))
         else:
             stuff_to_add.append("<listOptionValue builtIn=\"false\" value=\"%s=1\"/> <!--GENERATED-->" % (words[1]))
 
