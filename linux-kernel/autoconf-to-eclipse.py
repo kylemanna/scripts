@@ -2,6 +2,10 @@
 # Update a Eclipse .cdtfile with the Linux autoconf.h defines
 # Copyright 2008 Simon Kagstrom
 # Released under the GPLv3, see http://www.gnu.org/licenses/
+#
+# Updated by Kyle Manna
+# To use this, export __KERNEL__ symbol prior to use so that the script
+# knows where to start modifying the .cprojects file
 
 import sys
 
